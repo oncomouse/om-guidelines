@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<h1 id="open-modernisms-markdown">Open Modernisms Markdown</h1>
+<p>These guidlines attempt to offer advice for those wishing to contribute documents to the Open Modernisms project. For a file to be easily included in an Open Modernisms anthology, we must have a “master” version of the file in our specialized markdown format. Because markdown is a plain-text format, it enables easy version control. Markdown also allows us to use a customized set of scripts and templates, with <a href="http://pandoc.org">pandoc</a> to produce a range of output formats (initially HTML and PDF, but conceivably plain text, ePub, TEI, and more).</p>
+<p>At the heart of these guidelines are conventions for representing metadata about a text/document (author, title, source) and recommendations for marking up the text itself, with particular attention to the sort of challenges one is likely to encounter in the essays and works at the heart of the Open Modernisms project: challenges of accurately representing poetry, epigraphs, and similar textual features that MarkDown may not easily represent.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<h2 id="metadata">Metadata</h2>
+<p>All metadata for an Open Modernisms text should be contained in the document itself, encoded as a YAML block at the very beginning of the file. This YAML metadata block should include all the metadata for the document: this includes both bibliographical information about the source text (author, title, date, and so on), information about the MarkDown file (who produced it, from what sources) and can also include an editorial note explaining the text’s context/importance/relevance.</p>
+<p>Here, for example, is a rather minimal metadata block for T. S. Eliot’s “Tradition and the Individual Talent,” originally published in <em>The Dial</em> in November of 1923.</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">---
+title: &#39;*Ulysses*, Order, and Myth&#39;
+author: 
+<span class="bn">    family: Eliot</span>
+<span class="bn">    given: T. S.</span>
+
+bibliography:
+<span class="bn">    title: &#39;*Ulysses*, Order, and Myth&#39;</span>
+<span class="bn">    author:</span>
+<span class="bn">        family: Eliot</span>
+<span class="bn">        given: T. S.</span>
+<span class="bn">    container-title: The Dial</span>
+<span class="bn">    page: 480-483</span>
+<span class="bn">    volume: LXXV </span>
+<span class="bn">    date: 1923-11</span>
+
+editor: Chris Forster
+
+source:
+- <span class="fl">http://summit.syr.edu/vwebv/holdingsInfo?bibId=911529</span>
+- <span class="fl">http://people.virginia.edu/~jdk3t/eliotulysses.htm</span>
+- <span class="fl">http://onlinebooks.library.upenn.edu/webbin/serial?id=thedial</span>
+---</code></pre>
+<p>Note that both the author and title here appear twice; once for the document, and once in the “bibliography.” In most cases, these two fields will likely be identical. Separating them, however, allows us to separate the title for a document in the <em>Open Modernisms</em> collection from the title of its source text. For instance, if one wished to excerpt a text, one would use its original title in the <code>bibliography</code>, but perhaps provide its title as “Excerpt from”<em>Ulysses</em>, Order, and Myth.&quot;</p>
+<p>The full set of fields that may be included are specified <a href="#valid-fields">below</a>.</p>
+<h3 id="valid-fields">Valid Fields</h3>
+<p>Below is a noncomprehensive list of valid fields for describing the metadata (both bibliographical and otherwise) as well as some helpful examples.</p>
+<h4 id="authors">Authors</h4>
+<p>TK</p>
+<p>In addition to a name, other information about an author may be included—date of birth (<code>birth</code>) and death (<code>death</code>) in the format <code>YYYY-MM-DD</code>.</p>
+<h4 id="titles">Titles</h4>
+<p>TK</p>
+<h4 id="publication-information">Publication Information</h4>
+<p>TK</p>
+<h4 id="bibliography">Bibliography</h4>
+<p>TK</p>
+<h2 id="transcribing-a-document-in-markdown">Transcribing a Document in Markdown</h2>
+<p>TK</p>
+<h3 id="comments">Comments</h3>
+<p>Comments can be left in markdown using HTML style comments: <code>&lt;!-- Comments. --&gt;</code>. Comments will be ignored when the source file is processed and will not appear in the output.</p>
+<p>Such comments can be useful to leave information that would be valuable to someone working on the encoding, such as the location of page-breaks. As an example of a such a convention, one might:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">What facts, then, let us ask ourselves, 
+what elements of the spectacle before 
+us, will naturally be most interesting to 
+a highly developed age like our own, to 
+&lt;!--<span class="co"> pb n=&#39;306&#39; --&gt;</span>an age making the demand which we 
+have described for an intellectual deliverance 
+by means of the complete intelligence 
+of its own situation?</code></pre>
+<p>This encoding, for example (taking a cue from the <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html">TEI guidlines</a>, marks the location within the running text where the page breaks from 305 to 306. This transcription also roughly respects line breaks, making it easier correlate the transcribed markdown with the source text images. (These line breaks, of course, are ignored by <code>pandoc</code> and so disappear when the text is processed to any output format.)</p>
+<h3 id="poetry">Poetry</h3>
+<p>TK</p>
+<h3 id="images">Images</h3>
+<p>TK</p>
+<p>If a document contains an image, you must first obtain a high quality (300dpi or higher)</p>
+<h3 id="epigraphs">Epigraphs</h3>
+<p>TK</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Designed originally as an easier, more economical, way to write HTML, MarkDown—unlike, for instance, <a href="www.tei-c.org/">TEI</a>—is not perhaps ideally suited to the challenge of richly remediating print texts. But its advantages (relative ease and simplicity; operating as a universal source format for pandoc) outweigh its lack of power.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>
