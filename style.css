@@ -48,3 +48,8 @@ pre {
 div.footnotes {
     font-size: 12pt;
 }
+
+.question {
+    color: red;
+    font-size: 15pt;
+}

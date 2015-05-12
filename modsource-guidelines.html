@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <title>Open Modernisms Markdown</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
@@ -28,34 +28,41 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
+<div id="header">
+<h1 class="title">Open Modernisms Markdown</h1>
+</div>
 <div id="TOC">
 <ul>
-<li><a href="#open-modernisms-markdown">Open Modernisms Markdown</a><ul>
-<li><a href="#metadata">Metadata</a><ul>
-<li><a href="#valid-fields">Valid Fields</a></li>
+<li><a href="#metadata"><span class="toc-section-number">1</span> Metadata</a><ul>
+<li><a href="#authors"><span class="toc-section-number">1.1</span> Authors</a></li>
+<li><a href="#titles"><span class="toc-section-number">1.2</span> Titles</a></li>
+<li><a href="#citation"><span class="toc-section-number">1.3</span> Citation</a></li>
+<li><a href="#source"><span class="toc-section-number">1.4</span> Source</a></li>
+<li><a href="#responsibility"><span class="toc-section-number">1.5</span> Responsibility</a></li>
+<li><a href="#note"><span class="toc-section-number">1.6</span> Note</a></li>
 </ul></li>
-<li><a href="#transcribing-a-document-in-markdown">Transcribing a Document in Markdown</a><ul>
-<li><a href="#comments">Comments</a></li>
-<li><a href="#poetry">Poetry</a></li>
-<li><a href="#images">Images</a></li>
-<li><a href="#epigraphs">Epigraphs</a></li>
-</ul></li>
+<li><a href="#transcribing-a-document-in-markdown"><span class="toc-section-number">2</span> Transcribing a Document in Markdown</a><ul>
+<li><a href="#headers"><span class="toc-section-number">2.1</span> Headers</a></li>
+<li><a href="#dashes-non-roman-characters-and-other-typographical-challenges"><span class="toc-section-number">2.2</span> Dashes, Non-Roman Characters, and Other Typographical Challenges</a></li>
+<li><a href="#comments"><span class="toc-section-number">2.3</span> Comments</a></li>
+<li><a href="#poetry"><span class="toc-section-number">2.4</span> Poetry</a></li>
+<li><a href="#images"><span class="toc-section-number">2.5</span> Images</a></li>
+<li><a href="#epigraphs"><span class="toc-section-number">2.6</span> Epigraphs</a></li>
 </ul></li>
 </ul>
 </div>
-<h1 id="open-modernisms-markdown">Open Modernisms Markdown</h1>
-<p>These guidelines attempt to offer advice for those wishing to contribute documents to the Open Modernisms project. For a file to be easily included in an Open Modernisms anthology, a “master” version of the file must exist in our specialized markdown format. Markdown has a number of advantages for the goals of Open Modernism. Because it is a plain-text format, markdown enables easy version control. Markdown also allows us to use <a href="http://pandoc.org">pandoc</a>, along with a set of customized scripts and templates, to produce a range of output formats (initially HTML and PDF, but conceivably plain text, ePub, TEI, and more).</p>
-<p>At the heart of these guidelines are conventions for representing metadata about a text/document (author, title, source) and recommendations for marking up the text itself, with particular attention to the sort of challenges one is likely to encounter in the essays and works at the heart of the Open Modernisms project: challenges of accurately representing poetry, epigraphs, and similar textual features that MarkDown may not easily represent.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
-<h2 id="metadata">Metadata</h2>
-<p>All metadata for an Open Modernisms text should be contained in the document itself, encoded as a YAML block at the very beginning of the file. This YAML metadata block should include all the metadata for the document: this includes both bibliographical information about the source text (author, title, date, and so on), information about the MarkDown file (who produced it, from what sources) and can also include an editorial note explaining the text’s context/importance/relevance.</p>
-<p>Here, for example, is a rather minimal metadata block for T. S. Eliot’s “Tradition and the Individual Talent,” originally published in <em>The Dial</em> in November of 1923.</p>
+<p>These guidelines attempt to offer advice for those wishing to contribute documents to the Open Modernisms project. For a file to be easily included in an Open Modernisms anthology, a “master” version of the file must exist in (our slightly specialized) markdown format. Markdown is a simple text markup format that allows one to easily indicate simple divisions and text properties (italics, etc) in plain text. Markdown has a number of advantages for the goals of Open Modernism. Because it is a plain-text format, markdown enables easy version control and editing. Markdown also allows us to use <a href="http://pandoc.org">pandoc</a>, along with a set of customized scripts and templates, to produce a range of output formats (initially HTML and PDF, but conceivably plain text, ePub, TEI, and more), all from a single source.</p>
+<p>At the heart of these guidelines are conventions for representing metadata about a text/document (author, title, source) and recommendations for marking up the text itself, with particular attention to the sort of challenges one is likely to encounter in the essays and works at the heart of the Open Modernisms project: challenges of accurately representing poetry, epigraphs, and similar textual features that markdown alone may not easily represent.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Our markdown, however, is a superset of the pandoc’s markdown, so <a href="http://pandoc.org/demo/example9/pandocs-markdown.html">pandoc’s documentation</a> may be valuable as well.</p>
+<h1 id="metadata"><span class="header-section-number">1</span> Metadata</h1>
+<p>All metadata—information related to a text that is not the body of the text itself (its title, its original publication information, who encoded it)—for an Open Modernisms text is contained at the beginning of the encoded document. This information is encoded as a “<a href="http://yaml.org/">YAML</a> block” at the very beginning of the file. This YAML metadata block is marked at its beginning and end by three hyphens (<code>---</code>) and should include all the metadata for the document: both bibliographical information about the source text (author, title, date, and so on), information about the markdown file (who produced it, from what sources). It may also include an editorial note explaining the text’s context/importance/relevance.</p>
+<p>Here, for example, is a metadata block for T. S. Eliot’s “Tradition and the Individual Talent,” originally published in <em>The Dial</em> in November of 1923.</p>
 <pre class="sourceCode markdown"><code class="sourceCode markdown">---
 title: &#39;*Ulysses*, Order, and Myth&#39;
 author: 
 <span class="bn">    family: Eliot</span>
 <span class="bn">    given: T. S.</span>
 
-bibliography:
+citation:
 <span class="bn">    title: &#39;*Ulysses*, Order, and Myth&#39;</span>
 <span class="bn">    author:</span>
 <span class="bn">        family: Eliot</span>
@@ -68,29 +75,84 @@ bibliography:
 editor: Chris Forster
 
 source:
-- <span class="fl">http://summit.syr.edu/vwebv/holdingsInfo?bibId=911529</span>
-- <span class="fl">http://people.virginia.edu/~jdk3t/eliotulysses.htm</span>
-- <span class="fl">http://onlinebooks.library.upenn.edu/webbin/serial?id=thedial</span>
+<span class="bn">    - http://summit.syr.edu/vwebv/holdingsInfo?bibId=911529</span>
+<span class="bn">    - http://people.virginia.edu/~jdk3t/eliotulysses.htm</span>
+<span class="bn">    - http://onlinebooks.library.upenn.edu/webbin/serial?id=thedial</span>
 ---</code></pre>
-<p>Note that both the author and title here appear twice; once for the document, and once in the “bibliography.” In most cases, these two fields will likely be identical. Separating them, however, allows us to separate the title for a document in the <em>Open Modernisms</em> collection from the title of its source text. For instance, if one wished to excerpt a text, one would use its original title in the <code>bibliography</code>, but perhaps provide its title as “Excerpt from”<em>Ulysses</em>, Order, and Myth.&quot;</p>
-<p>The full set of fields that may be included are specified <a href="#valid-fields">below</a>.</p>
-<h3 id="valid-fields">Valid Fields</h3>
-<p>Below is a noncomprehensive list of valid fields for describing the metadata (both bibliographical and otherwise) as well as some helpful examples.</p>
-<h4 id="authors">Authors</h4>
-<p>TK</p>
-<p>In addition to a name, other information about an author may be included—date of birth (<code>birth</code>) and death (<code>death</code>) in the format <code>YYYY-MM-DD</code>.</p>
-<h4 id="titles">Titles</h4>
-<p>TK</p>
-<h4 id="publication-information">Publication Information</h4>
-<p>TK</p>
-<h4 id="bibliography">Bibliography</h4>
-<p>TK</p>
-<h2 id="transcribing-a-document-in-markdown">Transcribing a Document in Markdown</h2>
-<p>TK</p>
-<h3 id="comments">Comments</h3>
+<p>Note that YAML format consists of key/value pairs (separated by a colon) which can in turn be nested using whitespace. For more information about specific fields, see below.</p>
+<h2 id="authors"><span class="header-section-number">1.1</span> Authors</h2>
+<p>The name of an author is stored as both a family name and a given name. These fields will be used for most purposes in generating output files.</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">author: 
+<span class="bn">    given: Charlie</span>
+<span class="bn">    family: Chaplin</span></code></pre>
+<div class="question">
+<p>How should we handle including alternative or commonly abbreviated names. Note in the example above, Eliot’s “given” name is “T. S.” This seems perverse. We could use brackets in the existing fields, for instance:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">author:
+<span class="bn">    given: T. [Thomas] S. [Stearns]</span>
+<span class="bn">    family: Eliot</span>
+<span class="bn">    </span>
+author:
+<span class="bn">    given: Charlie [Charles]</span>
+<span class="bn">    family: Chaplin</span></code></pre>
+<p>Or we could try or we could add another field, storing the name in one field and the name to use for most situations in another. For instance:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">author:
+<span class="bn">    given: Thomas Sterans</span>
+<span class="bn">    family: Eliot</span>
+<span class="bn">    given-use: T. S.</span></code></pre>
+</div>
+<h3 id="dates-of-birth-and-death"><span class="header-section-number">1.1.1</span> Dates of Birth and Death</h3>
+<p>In addition to an author’s name, it is possible to include other information about an author. If you wish to include the dates of an author’s birth and death, they may be included as <code>birth</code> and <code>death</code>, in the format <code>YYYY-MM-DD</code>. <em>Memento mori</em>.</p>
+<div class="question">
+<p>Would we be interested in allowing for author biographies? This could be a short paragraph in the document, or a link to an external file. Linking to an external file might make sense, as it would allow multiple documents to share a single author bio. Can we borrow such bios from a source… maybe REM?</p>
+</div>
+<h2 id="titles"><span class="header-section-number">1.2</span> Titles</h2>
+<p>There are two <code>title</code> fields in the metadata block, one for the encoded document and another as part of its <code>citation</code>. In most cases these two titles will be identical (simply encode the same title in two places). There are instances, however, where the title for a document in the <em>Open Modernisms</em> collection would differ from the title of its source text. For instance, if one wished to excerpt a text, one might use its original title in the <code>citation</code>, but perhaps provide its title as “Excerpt from”<em>Ulysses</em>, Order, and Myth,&quot; or similar. Markdown markup (such as <em>italics</em>, etc.) can be used in titles. Please keep the title in single quotation marks (this will solve YAML parsing problems that can be caused, for instance, by colons and other punctuation in a title).</p>
+<h2 id="citation"><span class="header-section-number">1.3</span> Citation</h2>
+<p>The <code>citation</code> section of the metadata header provides complete citation information about the source of the text of the transcribed document.</p>
+<p>The full set of fields that may be included are:</p>
+<ul>
+<li><p><code>title</code>: the title of the work as it appears in the source that is being transcribed or represented.</p></li>
+<li><p><code>container-title</code>: for works that are part of a larger work—essays in a collection, chapters of a book, articles in a periodical—the <code>container-title</code> is the title of the larger item.</p></li>
+<li><p><code>date</code>: dates must be encoded as hyphen-separated numbers of the format, <code>YYYY-MM-DD</code> or <code>YYYY-MM</code> or <code>YYYY</code>. This date should reflect the stated publication date in the source document.</p></li>
+<li><p><code>volume</code>: for periodical items published with volume information.</p></li>
+<li><p><code>issue</code>: for periodical items published with issue information.</p></li>
+<li><p><code>publisher</code>: for sources that list a publisher (usually books), this field will container the name of the publisher.</p></li>
+<li><p><code>publisher-place</code>: for sources that list the location of publisher, that information can be included here.</p></li>
+<li><p><code>page</code>: a page range for the pages on which the essay/article occurs.</p></li>
+</ul>
+<h2 id="source"><span class="header-section-number">1.4</span> Source</h2>
+<p>The source is a simple list of resources used to create the document—usually a list of links to electronic resources, image files, or library records of print items consulted for the encoding.</p>
+<h2 id="responsibility"><span class="header-section-number">1.5</span> Responsibility</h2>
+<p>Be sure to include the name of the person responsible for putting together this transcription file under editor. This field is a list of names; for convenience, also include an email address.</p>
+<h2 id="note"><span class="header-section-number">1.6</span> Note</h2>
+<p>Any other information about the document or its transcription (including problems with encoding, justifications for edition chosen, and so on) can be included in this note.</p>
+<h1 id="transcribing-a-document-in-markdown"><span class="header-section-number">2</span> Transcribing a Document in Markdown</h1>
+<h2 id="headers"><span class="header-section-number">2.1</span> Headers</h2>
+<p>By convention we reserve first level headers (i.e. <code>&lt;h1&gt;</code>s) for titles of works. If the work you are encoding has subdivisions of some kind, please indicate them using level two headers, encoded in markdown as <code>##</code>; if, in turn, those sections are further subdivided use level three headers (<code>###</code>) and so on. For consistency, please encode divisions using hashmarks-style headers (so-called “<a href="http://www.aaronsw.com/2002/atx/intro">Atx</a> Headers”) rather than “underlining” text with hyphens or equals signs (so-called “<a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> Headers.”)</p>
+<p><strong>Example</strong>: An essay that had been divided into sections, numbered simply with Roman Numerals, could be encoded:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown"><span class="fu">## I</span>
+
+Lorem ipsum, *et cetera*.
+
+<span class="fu">## II</span>
+
+Return of the mack...
+
+<span class="fu">### III</span>
+
+And so, in conclusion...</code></pre>
+<h2 id="dashes-non-roman-characters-and-other-typographical-challenges"><span class="header-section-number">2.2</span> Dashes, Non-Roman Characters, and Other Typographical Challenges</h2>
+<h3 id="dashes-em-en-and-otherwise"><span class="header-section-number">2.2.1</span> Dashes, Em, En, and Otherwise</h3>
+<p>Most dashes one encounters are either em-dashes or hyphens. Hyphens may be simply transcribed as is. Em dashes may be transcribed as unicode em-dashes (that is, <code>—</code>) or, LaTeX-style, as three hyphens (<code>---</code>). The latter encoding may be preferable because it is easier to type in most circumstances and it is easier to proofread.</p>
+<p>Should you find yourself confronted by the rare en-dash (<code>–</code>), typically used to separate numbers in a range, it may be encoded either with the appropriate unicode character <em>or</em> (LaTeX style) with two hyphens.</p>
+<p><strong>Nota Bene</strong>: End of line of hyphenation may be silently removed from a transcription.</p>
+<h3 id="non-roman-characters"><span class="header-section-number">2.2.2</span> Non-Roman Characters</h3>
+<p>Usually the easiest way to encode accented or other characters from the extended Latin alphabet is to simply use the appropriate <a href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a> character.</p>
+<h2 id="comments"><span class="header-section-number">2.3</span> Comments</h2>
 <p>Comments can be left in markdown using HTML style comments: <code>&lt;!-- Comments. --&gt;</code>. Comments will be ignored when the source file is processed and will not appear in the output.</p>
-<p>Such comments can be useful to leave information that would be valuable to someone working on the encoding, such as the location of page-breaks. As an example of a such a convention, one might:</p>
-<pre class="sourceCode markdown"><code class="sourceCode markdown">What facts, then, let us ask ourselves, 
+<p>Such comments can be useful as a way of leaving notes or other information in a document that would be valuable to yourself (or someone else working on the encoding). For instance, one could use comments to mark the location of page-breaks in a source image/text. For instance:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">
+What facts, then, let us ask ourselves, 
 what elements of the spectacle before 
 us, will naturally be most interesting to 
 a highly developed age like our own, to 
@@ -98,14 +160,71 @@ a highly developed age like our own, to
 have described for an intellectual deliverance 
 by means of the complete intelligence 
 of its own situation?</code></pre>
-<p>This encoding, for example (taking a cue from the <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html">TEI guidlines</a>, marks the location within the running text where the page breaks from 305 to 306. This transcription also roughly respects line breaks, making it easier correlate the transcribed markdown with the source text images. (These line breaks, of course, are ignored by <code>pandoc</code> and so disappear when the text is processed to any output format.)</p>
-<h3 id="poetry">Poetry</h3>
-<p>TK</p>
-<h3 id="images">Images</h3>
-<p>TK</p>
-<p>If a document contains an image, you must first obtain a high quality (300dpi or higher)</p>
-<h3 id="epigraphs">Epigraphs</h3>
-<p>TK</p>
+<p>This encoding, taking a cue from the <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html">TEI guidlines</a>, marks the location within the running text where the page breaks from 305 to 306. This transcription also roughly respects line breaks, making it easier correlate the transcribed markdown with the source text images. (These line breaks, of course, are ignored by <code>pandoc</code> and so disappear when the text is processed to any output format.)</p>
+<h2 id="poetry"><span class="header-section-number">2.4</span> Poetry</h2>
+<p>Poetry has particular formatting demands. Marking up poetry requires <strong>two</strong> things:</p>
+<ol style="list-style-type: decimal">
+<li>Individual poetic lines begin with the pipe characters (<code>|</code>).</li>
+<li>The lines must be in a separate <code>div</code> with <code>type='poetry'</code>.</li>
+</ol>
+<p>For instance:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">
+Hardy begins his meditation on the Titantic&#39;s fate:
+
+&lt;div class=&#39;poetry&#39;&gt;
+
+|      In a solitude of the sea
+|      Deep from human vanity,
+| And the Pride of Life that planned her, stilly couches her.
+
+&lt;/div&gt;</code></pre>
+<p>The whitespace tries to capture the spacing of the origina; this spacing will be preserved in output formats.</p>
+<p><strong>Note the blank lines—between the <code>&lt;div class='poetry'&gt;</code> and the first line of poetry, and the between the last line of poetry and the closing <code>&lt;/div&gt;</code>.</strong> These are necessary for any <code>&lt;div&gt;</code> to be correctly processed by <code>pandoc</code>.</p>
+<h2 id="images"><span class="header-section-number">2.5</span> Images</h2>
+<p>If a document contains an image, you must first obtain a high quality (300dpi or higher) image file of the image, preferably PNG and place it in a the same directory as your markdown file. <strong>Be sure to give the image file a unique filename, relating it to do the file of which it is a part</strong> (something like <code>[author name]_[essay title]_image_001.png</code> would work well). To include it in the file, add the following markdown:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">![](author_essay_image001.png &quot;Optional Short Title of Image&quot;)</code></pre>
+<div class="question">
+<p>Same directory as markdown file, or use one directory per document which can have an <code>images</code> subdirectory? How we answer this question affects the scripts we write to build files; right now, in fact, the one thing that prevents from my <a href="https://github.com/c-forster/modsource">current janky set up</a> from working entirely automatically, is having to manually create an <code>images</code> directory for the (one) image (from Ford’s “Impression” essay). Not sure if there is an obvious or better way of doing this…</p>
+</div>
+<h2 id="epigraphs"><span class="header-section-number">2.6</span> Epigraphs</h2>
+<p>To mark an epigraph please mark it as a <code>div</code> of type <code>epigraph</code>; this will allow it to be typeset or styled appropriately in output formats. Epigraphs themselves may contain multiple paragraphs, or lines of verse, and should be marked up accordingly. (As with all other <code>divs</code>, be sure to include a blank line before both the opening and closing <code>div</code> tag.)</p>
+<p><strong>Example</strong>: Consider this page image. <img src="aldington_influence-of-james-joyce_title.png" alt="Title from Richard Aldington’s Essay The Influence of Mr. James Joyce" /></p>
+<p>This material, including complete metadata (with details not available from the image above alone), could be marked up as follows.</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">---
+title: &#39;The Influence of Mr. James Joyce&#39;
+author:
+<span class="bn">    family: Aldington</span>
+<span class="bn">    given: Richard</span>
+<span class="bn">    birth: 1892-07-08</span>
+<span class="bn">    death: 1962-07-27</span>
+
+bibliography:
+<span class="bn">    title: &#39;The Influence of Mr. James Joyce&#39;</span>
+<span class="bn">    container-title: The English Review</span>
+<span class="bn">    page: 333-341</span>
+<span class="bn">    date: 1921-04</span>
+
+sources:
+<span class="bn">    - http://search.proquest.com/docview/2441624?accountid=14214</span>
+ 
+editor: Chris Forster
+---
+
+&lt;div class=&#39;epigraph&#39;&gt;
+
+*&quot;La via n&#39;est de soy ny bien ny mal; c&#39;est la place du bien et du mal, selon 
+que vous la leur faictes.&quot;* --- Montaigne.
+
+&lt;/div&gt;
+
+<span class="fu">## I</span>
+
+Obviously no valid criticism can be made of Mr. Joyce&#39;s 
+*Ulysses* until the whole work has been published in book 
+form. It seems to me that the serial publication has lasted 
+an abnormally long time, and that there s some excuse 
+for my impatience in speaking of *Ulysses* while it is 
+still fragmentary. Mr. Joyce&#39;s attempt is most interesting </code></pre>
 <div class="footnotes">
 <hr />
 <ol>
