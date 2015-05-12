@@ -45,9 +45,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#headers"><span class="toc-section-number">2.1</span> Headers</a></li>
 <li><a href="#dashes-non-roman-characters-and-other-typographical-challenges"><span class="toc-section-number">2.2</span> Dashes, Non-Roman Characters, and Other Typographical Challenges</a></li>
 <li><a href="#comments"><span class="toc-section-number">2.3</span> Comments</a></li>
-<li><a href="#poetry"><span class="toc-section-number">2.4</span> Poetry</a></li>
-<li><a href="#images"><span class="toc-section-number">2.5</span> Images</a></li>
-<li><a href="#epigraphs"><span class="toc-section-number">2.6</span> Epigraphs</a></li>
+<li><a href="#block-quotes"><span class="toc-section-number">2.4</span> Block Quotes</a></li>
+<li><a href="#poetry"><span class="toc-section-number">2.5</span> Poetry</a></li>
+<li><a href="#images"><span class="toc-section-number">2.6</span> Images</a></li>
+<li><a href="#epigraphs"><span class="toc-section-number">2.7</span> Epigraphs</a></li>
 </ul></li>
 </ul>
 </div>
@@ -161,7 +162,16 @@ have described for an intellectual deliverance
 by means of the complete intelligence 
 of its own situation?</code></pre>
 <p>This encoding, taking a cue from the <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html">TEI guidlines</a>, marks the location within the running text where the page breaks from 305 to 306. This transcription also roughly respects line breaks, making it easier correlate the transcribed markdown with the source text images. (These line breaks, of course, are ignored by <code>pandoc</code> and so disappear when the text is processed to any output format.)</p>
-<h2 id="poetry"><span class="header-section-number">2.4</span> Poetry</h2>
+<h2 id="block-quotes"><span class="header-section-number">2.4</span> Block Quotes</h2>
+<div class="question">
+<p>A block quote is best encoded with an inline <code>&lt;span class='blockquote'&gt;</code>. For example:</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">I am here saying something wise and insightful about an 
+important piece of prose. Let me now show you that prose:
+&lt;span class=&#39;blockquote&#39;&gt;Hamster ipsum, dolorous spit.&lt;/span&gt;
+And now we return.</code></pre>
+<p><strong><em>Nota bene</em></strong>: Unlike with custom <code>divs</code> (used for epigraphs and poetry), be sure to <strong>not</strong> include an empty line. These items should appear, essentially, inline in the markdown and will be processed as necessary to output formats.</p>
+</div>
+<h2 id="poetry"><span class="header-section-number">2.5</span> Poetry</h2>
 <p>Poetry has particular formatting demands. Marking up poetry requires <strong>two</strong> things:</p>
 <ol style="list-style-type: decimal">
 <li>Individual poetic lines begin with the pipe characters (<code>|</code>).</li>
@@ -180,13 +190,13 @@ Hardy begins his meditation on the Titantic&#39;s fate:
 &lt;/div&gt;</code></pre>
 <p>The whitespace tries to capture the spacing of the origina; this spacing will be preserved in output formats.</p>
 <p><strong>Note the blank lines—between the <code>&lt;div class='poetry'&gt;</code> and the first line of poetry, and the between the last line of poetry and the closing <code>&lt;/div&gt;</code>.</strong> These are necessary for any <code>&lt;div&gt;</code> to be correctly processed by <code>pandoc</code>.</p>
-<h2 id="images"><span class="header-section-number">2.5</span> Images</h2>
+<h2 id="images"><span class="header-section-number">2.6</span> Images</h2>
 <p>If a document contains an image, you must first obtain a high quality (300dpi or higher) image file of the image, preferably PNG and place it in a the same directory as your markdown file. <strong>Be sure to give the image file a unique filename, relating it to do the file of which it is a part</strong> (something like <code>[author name]_[essay title]_image_001.png</code> would work well). To include it in the file, add the following markdown:</p>
 <pre class="sourceCode markdown"><code class="sourceCode markdown">![](author_essay_image001.png &quot;Optional Short Title of Image&quot;)</code></pre>
 <div class="question">
 <p>Same directory as markdown file, or use one directory per document which can have an <code>images</code> subdirectory? How we answer this question affects the scripts we write to build files; right now, in fact, the one thing that prevents from my <a href="https://github.com/c-forster/modsource">current janky set up</a> from working entirely automatically, is having to manually create an <code>images</code> directory for the (one) image (from Ford’s “Impression” essay). Not sure if there is an obvious or better way of doing this…</p>
 </div>
-<h2 id="epigraphs"><span class="header-section-number">2.6</span> Epigraphs</h2>
+<h2 id="epigraphs"><span class="header-section-number">2.7</span> Epigraphs</h2>
 <p>To mark an epigraph please mark it as a <code>div</code> of type <code>epigraph</code>; this will allow it to be typeset or styled appropriately in output formats. Epigraphs themselves may contain multiple paragraphs, or lines of verse, and should be marked up accordingly. (As with all other <code>divs</code>, be sure to include a blank line before both the opening and closing <code>div</code> tag.)</p>
 <p><strong>Example</strong>: Consider this page image. <img src="aldington_influence-of-james-joyce_title.png" alt="Title from Richard Aldington’s Essay The Influence of Mr. James Joyce" /></p>
 <p>This material, including complete metadata (with details not available from the image above alone), could be marked up as follows.</p>

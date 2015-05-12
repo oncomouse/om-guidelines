@@ -181,6 +181,23 @@ of its own situation?
 
 This encoding, taking a cue from the [TEI guidlines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html), marks the location within the running text where the page breaks from 305 to 306. This transcription also roughly respects line breaks, making it easier correlate the transcribed markdown with the source text images. (These line breaks, of course, are ignored by `pandoc` and so disappear when the text is processed to any output format.)
 
+## Block Quotes
+
+<div class='question'>
+
+A block quote is best encoded with an inline `<span class='blockquote'>`. For example:
+
+```markdown
+I am here saying something wise and insightful about an 
+important piece of prose. Let me now show you that prose:
+<span class='blockquote'>Hamster ipsum, dolorous spit.</span>
+And now we return.
+```
+
+***Nota bene***: Unlike with custom `divs` (used for epigraphs and poetry), be sure to **not** include an empty line. These items should appear, essentially, inline in the markdown and will be processed as necessary to output formats.
+
+</div>
+
 ## Poetry
 
 Poetry has particular formatting demands. Marking up poetry requires **two** things: 
