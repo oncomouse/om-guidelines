@@ -60,46 +60,46 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <pre class="sourceCode markdown"><code class="sourceCode markdown">---
 title: &#39;*Ulysses*, Order, and Myth&#39;
 author: 
-<span class="bn">    family: Eliot</span>
-<span class="bn">    given: T. S.</span>
+<span class="bn">  family: Eliot</span>
+<span class="bn">  given: T. S.</span>
 
 citation:
-<span class="bn">    title: &#39;*Ulysses*, Order, and Myth&#39;</span>
-<span class="bn">    author:</span>
-<span class="bn">        family: Eliot</span>
-<span class="bn">        given: T. S.</span>
-<span class="bn">    container-title: The Dial</span>
-<span class="bn">    page: 480-483</span>
-<span class="bn">    volume: LXXV </span>
-<span class="bn">    date: 1923-11</span>
+<span class="bn">  title: &#39;*Ulysses*, Order, and Myth&#39;</span>
+<span class="bn">  author:</span>
+<span class="bn">    family: Eliot</span>
+<span class="bn">    given: T. S.</span>
+<span class="bn">  container-title: The Dial</span>
+<span class="bn">  page: 480-483</span>
+<span class="bn">  volume: LXXV </span>
+<span class="bn">  date: 1923-11</span>
 
 editor: Chris Forster
 
 source:
-<span class="bn">    - http://summit.syr.edu/vwebv/holdingsInfo?bibId=911529</span>
-<span class="bn">    - http://people.virginia.edu/~jdk3t/eliotulysses.htm</span>
-<span class="bn">    - http://onlinebooks.library.upenn.edu/webbin/serial?id=thedial</span>
+<span class="bn">  - http://summit.syr.edu/vwebv/holdingsInfo?bibId=911529</span>
+<span class="bn">  - http://people.virginia.edu/~jdk3t/eliotulysses.htm</span>
+<span class="bn">  - http://onlinebooks.library.upenn.edu/webbin/serial?id=thedial</span>
 ---</code></pre>
 <p>Note that YAML format consists of key/value pairs (separated by a colon) which can in turn be nested using whitespace. For more information about specific fields, see below.</p>
 <h2 id="authors"><span class="header-section-number">1.1</span> Authors</h2>
 <p>The name of an author is stored as both a family name and a given name. These fields will be used for most purposes in generating output files.</p>
 <pre class="sourceCode markdown"><code class="sourceCode markdown">author: 
-<span class="bn">    given: Charlie</span>
-<span class="bn">    family: Chaplin</span></code></pre>
+<span class="bn">  given: Charlie</span>
+<span class="bn">  family: Chaplin</code></pre></span>
 <div class="question">
 <p>How should we handle including alternative or commonly abbreviated names. Note in the example above, Eliot’s “given” name is “T. S.” This seems perverse. We could use brackets in the existing fields, for instance:</p>
 <pre class="sourceCode markdown"><code class="sourceCode markdown">author:
-  given: T. [Thomas] S. [Stearns]
-  family: Eliot
-  
+<span class="bn">  given: T. [Thomas] S. [Stearns]</span>
+<span class="bn">  family: Eliot</span>
+
 author:
-  given: Charlie [Charles]
-  family: Chaplin</code></pre>
+<span class="bn">  given: Charlie [Charles]</span>
+<span class="bn">  family: Chaplin</code></pre></span>
 <p>Or we could try or we could add another field, storing the name in one field and the name to use for most situations in another. For instance:</p>
 <pre class="sourceCode markdown"><code class="sourceCode markdown">author:
-<span class="bn">    given: Thomas Sterans</span>
-<span class="bn">    family: Eliot</span>
-<span class="bn">    given-use: T. S.</span></code></pre>
+<span class="bn">  given: Thomas Sterans</span>
+<span class="bn">  family: Eliot</span>
+<span class="bn">  given-use: T. S.</code></pre></span>
 </div>
 <h3 id="dates-of-birth-and-death"><span class="header-section-number">1.1.1</span> Dates of Birth and Death</h3>
 <p>In addition to an author’s name, it is possible to include other information about an author. If you wish to include the dates of an author’s birth and death, they may be included as <code>birth</code> and <code>death</code>, in the format <code>YYYY-MM-DD</code>. <em>Memento mori</em>.</p>
@@ -203,19 +203,19 @@ Hardy begins his meditation on the Titantic&#39;s fate:
 <pre class="sourceCode markdown"><code class="sourceCode markdown">---
 title: &#39;The Influence of Mr. James Joyce&#39;
 author:
-<span class="bn">    family: Aldington</span>
-<span class="bn">    given: Richard</span>
-<span class="bn">    birth: 1892-07-08</span>
-<span class="bn">    death: 1962-07-27</span>
+<span class="bn">  family: Aldington</span>
+<span class="bn">  given: Richard</span>
+<span class="bn">  birth: 1892-07-08</span>
+<span class="bn">  death: 1962-07-27</span>
 
 bibliography:
-<span class="bn">    title: &#39;The Influence of Mr. James Joyce&#39;</span>
-<span class="bn">    container-title: The English Review</span>
-<span class="bn">    page: 333-341</span>
-<span class="bn">    date: 1921-04</span>
+<span class="bn">  title: &#39;The Influence of Mr. James Joyce&#39;</span>
+<span class="bn">  container-title: The English Review</span>
+<span class="bn">  page: 333-341</span>
+<span class="bn">  date: 1921-04</span>
 
 sources:
-<span class="bn">    - http://search.proquest.com/docview/2441624?accountid=14214</span>
+<span class="bn">  - http://search.proquest.com/docview/2441624?accountid=14214</span>
  
 editor: Chris Forster
 ---
