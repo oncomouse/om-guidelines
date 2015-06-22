@@ -56,12 +56,12 @@ How should we handle including alternative or commonly abbreviated names. Note i
 
 ```markdown
 author:
-	given: T. [Thomas] S. [Stearns]
-	family: Eliot
-	
+  given: T. [Thomas] S. [Stearns]
+  family: Eliot
+  
 author:
-	given: Charlie [Charles]
-	family: Chaplin
+  given: Charlie [Charles]
+  family: Chaplin
 ```
 
 Or we could try or we could add another field, storing the name in one field and the name to use for most situations in another. For instance:
